@@ -1,96 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Humanizer AI by Manav Baliyan</title>
-  <meta name="description" content="Humanizer AI educational website by Manav Baliyan, Class 9">
-  <meta name="author" content="Manav Baliyan">
-  <style>
-    body {
-      background: #0d0d0d;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      color: #00bfff;
-      padding: 30px;
-    }
-    nav {
-      background: #111;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #00bfff;
-    }
-    section {
-      margin: 20px auto;
-      padding: 20px;
-      background: #1c1c1c;
-      border-radius: 10px;
-      max-width: 800px;
-    }
-    textarea {
-      width: 80%;
-      height: 100px;
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 8px;
-      border: none;
-      background: #0d0d0d;
-      color: white;
-      font-size: 1em;
-    }
-    button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #00bfff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      color: black;
-    }
-    button:hover {
-      background: #009acd;
-    }
-    footer {
-      margin-top: 30px;
-      padding: 10px;
-      background: #000;
-      color: #888;
-    }
-  </style>
-</head>
-<body>
+<section id="demo">
+  <h2>Demo (Interactive)</h2>
+  <textarea id="aiInput" placeholder="Paste AI text here..."></textarea><br><br>
+  <button onclick="humanizeText()">Humanize Text</button>
 
-<header>
-  <h1>Humanizer AI</h1>
-  <p>By Manav Baliyan</p>
-</header>
-
-<nav>
-  <a href="#about">About</a>
-  <a href="#work">How It Works</a>
-  <a href="#example">Example</a>
-  <a href="#demo">Demo</a>
-</nav>
-
-<section id="about">
-  <h2>What is Humanizer AI?</h2>
-  <p>This AI converts AI-generated text into natural, human-like writing.</p>
+  <h3>Humanized Text:</h3>
+  <textarea id="humanOutput" placeholder="Humanized text will appear here..." readonly></textarea>
 </section>
 
-<section id="work">
-  <h2>How Does
+<script>
+function humanizeText() {
+  let input = document.getElementById("aiInput").value;
+  
+  if(input.trim() === "") {
+    alert("Please paste some AI text first!");
+    return;
+  }
+
+  let output = input
+    .replace(/Artificial Intelligence/g, "AI")
+    .replace(/automated systems/g, "smart tools")
+    .replace(/massive amounts of data/g, "lots of information")
+    .replace(/without direct human intervention/g, "on its own")
+    .replace(/predict/g, "guess")
+    .replace(/analyze/g, "look at")
+    .replace(/leading to improvements/g, "helping improve")
+    + " (Humanized!)";
+
+  document.getElementById("humanOutput").value = output;
+}
+</script>
+
 
 
